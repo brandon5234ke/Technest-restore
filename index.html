@@ -432,7 +432,6 @@ body {
 
 <!-- Sidebar -->
 <div class="sidebar" id="sidebar">
-  <button class="sidebar-close" onclick="closeSidebar()"><i class="fa fa-times"></i></button>
   <h2>TECHNEST</h2>
   <a href="#home" class="active"><i class="fa fa-home"></i> Home</a>
   <a href="#laptops"><i class="fa fa-laptop"></i> Laptops</a>
@@ -590,6 +589,8 @@ links.forEach(link => {
   link.addEventListener('click', () => {
     links.forEach(l => l.classList.remove('active'));
     link.classList.add('active');
+    // Close sidebar after selecting a section (especially on mobile)
+    closeSidebar();
   });
 });
 
